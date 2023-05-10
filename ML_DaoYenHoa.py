@@ -67,6 +67,30 @@ print('Train has' , len(train), 'photos')
 print('Val has' , len(val), 'photos')
 print('Test has' , len(test), 'photos')
 
+train_size = len(train)
+val_size = len(val)
+test_size = len(test)
+# Pie chart labels
+labels = ['Train', 'Validation', 'Test']
+
+# Pie chart values
+sizes = [train_size, val_size, test_size]
+
+# Pie chart colors
+colors = ['#1f77b4', '#ff7f0e', '#2ca02c']
+
+# Plotting the pie chart
+plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
+
+# Aspect ratio to make the pie chart circular
+plt.axis('equal')
+
+# Title of the pie chart
+plt.title('Data Distribution')
+
+# Display the pie chart
+plt.show()
+
 generator = ImageDataGenerator(rescale=1/255.)
 traingenerator = generator.flow_from_dataframe(dataframe = train,
                                                directory = None,
