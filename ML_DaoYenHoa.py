@@ -194,7 +194,7 @@ model2.add(Dense(1, activation='sigmoid'))
 
 
 #Compile
-model2.compile(loss=tf.losses.BinaryCrossentropy(), optimizer="rmsprop", metrics=['accuracy'])
+model2.compile(loss=tf.losses.BinaryCrossentropy(), optimizer="adam", metrics=['accuracy'])
 
 model2.summary()
 tf.keras.utils.plot_model(
